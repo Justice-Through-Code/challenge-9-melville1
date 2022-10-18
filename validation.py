@@ -8,13 +8,14 @@
 def validate_user_input():
     
     while True:
+        number = input(f'Please enter a number ')
         try : 
-            number = int(input(f'Please enter a number '))
+            return int(number)
             break
 
-        except:
+        except ValueError:
             print('You did not enter a valid number, please try again')
-    return number
+    return validate_user_input()
 
     
 
@@ -42,7 +43,7 @@ print(f'The number the user entered is {user_number}.')
 
 def print_tenth_item(top_ten):
     try:
-        print(f'{top_ten[9]}')
+        print(top_ten[9])
     except IndexError:
         print('N/A')
 
